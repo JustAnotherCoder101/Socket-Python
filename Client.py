@@ -25,6 +25,32 @@ def send(msg):
     client.send(message)
     print(client.recv(2048).decode(FORMAT))
 
-send(input("Enter your message: "))
-input()
+running = True
+
+while running:
+    try:
+
+        action = int(input('''
+
+---------ACTIONS---------
+1 - send messaage
+2 - disconnect
+tba
+'''))
+    except ValueError:
+        action = 0    
+
+    if action == 1:
+        print("Input Message:")
+        send(input())
+
+    elif action == 2:
+        print("Disconect on pressing ENTER:")
+        input()
+        break
+
+    else:
+        print("Pick a valid potion lolz")
+
+
 send(DISCONNECT_MESSAGE)
