@@ -1,6 +1,7 @@
 import socket
 import threading
 import time
+import pickle
 
 
 HEADER = 64 
@@ -32,6 +33,7 @@ def handle_client(conn, addr):
             if msg == DISCONNECT_MESSAGE:  
                 connected = False
             print(f"[{addr}] {msg}")
+            conn.send("Msg received".encode(FORMAT))
     conn.close
 
 
