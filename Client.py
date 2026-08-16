@@ -26,17 +26,18 @@ def send(msg):
     print(client.recv(2048).decode(FORMAT))
 
 running = True
-
-while running:
-    try:
-
-        action = int(input('''
+print('''
 
 ---------ACTIONS---------
 1 - send messaage
 2 - disconnect
 tba
-'''))
+''')
+while running:
+    try:
+
+        action = int(input("Pick an option"))
+        
     except ValueError:
         action = 0    
 
