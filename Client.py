@@ -30,14 +30,20 @@ print('''
 
 ---------ACTIONS---------
 1 - send messaage
-2 - disconnect
+2 - disconnectg
 tba
+
+
 ''')
+
+
+ID = input("Enter your username: ")
+
 while running:
     try:
 
         action = int(input("Pick an option"))
-        
+
     except ValueError:
         action = 0    
 
